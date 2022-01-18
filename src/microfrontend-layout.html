@@ -18,7 +18,22 @@
   -->
 
   <main>
+    <nav>This is my Nav
+      <a href="/react"> React </a>
+      <a href="/ng"> Angular </a>
+      <a href="/welcome"> Welcome </a>
+    </nav>
+    <hr>
     <route default>
+      <application name="@single-spa/welcome"></application>
+    </route>
+    <route path="ng">
+      <application name="ng-beancoin-client"></application>
+    </route>
+    <route path="react">
+      <application name="@GeraldRyan/react-beancoin-client"></application>
+    </route>
+    <route path="welcome">
       <application name="@single-spa/welcome"></application>
     </route>
   </main>
