@@ -58,12 +58,16 @@
         "@GeraldRyan/react-beancoin-client": "http://localhost:8080/GeraldRyan-react-beancoin-client.js",
         "ng-beancoin-client": "http://localhost:4200/main.js"
 
-        <!-- Try this one for fun - hosted JS script. Have to change security -->
-        <!-- "ng-beancoin-client": "http://cdn.jsdelivr.net/gh/GeraldRyan/Sprint-Challenge--Algorithms/main.js" -->
+
       }
     }
   </script>
   <% } %>
+
+  <!-- NB - doesn't like comments inside import map -->
+        <!-- Try this one for fun - hosted JS script. Have to change security -->
+        <!-- "ng-beancoin-client": "http://cdn.jsdelivr.net/gh/GeraldRyan/Sprint-Challenge--Algorithms/main.js" -->
+<!-- NB so put these in the import map to actually work.  -->
 
   <!--
     If you need to support Angular applications, uncomment the script tag below [DONE 1/17/2022] to ensure only one instance of ZoneJS is loaded
