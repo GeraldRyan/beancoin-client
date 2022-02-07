@@ -1,9 +1,11 @@
 import './index.css'
 import { useState, useEffect } from 'react';
+import { API_BASE_URL } from './config';
+import Blockchain from './components/Blockchain';
 
 export default function Root(props) {
   console.log("PROPS", props)
-  const WALLET_URL = "http://localhost:8080/wallet/info"
+  const WALLET_URL = `${API_BASE_URL}/wallet/info`
 
   const [walletInfo, setWalletInfo] = useState({});
 
@@ -26,6 +28,7 @@ export default function Root(props) {
       </section>
       <div>Address: {address}</div>
       <div>Balance: {balance}</div>
+      <Blockchain></Blockchain>
 
     </div>
   );
