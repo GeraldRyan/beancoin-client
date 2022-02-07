@@ -1,33 +1,32 @@
 import './index.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Root(props) {
+  console.log("PROPS", props)
+  const WALLET_URL = "http://localhost:8080/wallet/info"
 
-  const [userQuery, setUserQuery] = useState()
+  const [walletInfo, setWalletInfo] = useState({});
 
-  const updateUserQuery = event =>{
-    console.log("user query: ", userQuery)
-    setUserQuery(event.target.value)
-  }
+  useEffect(() =>{
+    fetch(WALLET_URL)
+    .then(res => res.json())
+    .then(json => {setWalletInfo(json);
+    console.log("RESPONSE OBJECT: ", json)
+    })
+  }, [])
 
-  const searchQuery = () =>{
-    window.open(`https://www.google.com/search?q=${userQuery}`)
-  }
+  const {address, balance } = walletInfo;
 
-  const handleKeyPress = event =>{
-    if (event.key == "Enter"){
-      searchQuery();
-    }
-  }
 
   return (
-<div>
+    <div>
       <section className="App">{props.name}
         is mounted and girls are cute!!
+        <div>Welcome To Beancoin!</div>
       </section>
+      <div>Address: {address}</div>
+      <div>Balance: {balance}</div>
 
-      <input value={userQuery} onChange={updateUserQuery}/>
-      <button onClick={searchQuery}>Search</button>
-</div>
+    </div>
   );
 }
