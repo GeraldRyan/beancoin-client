@@ -23,7 +23,7 @@ export default function Root(props) {
   return (
     <div>
       <section className="App">{props.name}
-        is mounted and girls are cute!!
+        is mounted!!
         <div>Welcome To Beancoin!</div>
       </section>
       <div>Address: {address}</div>

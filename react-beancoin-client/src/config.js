@@ -1,1 +1,6 @@
-export const API_BASE_URL = "http://localhost:8080"
+const API_BASE_URL = "http://localhost:8080"
+const NANOSECONDS_JAVA = 1
+const MICROSECONDS_JAVA = 1000 * NANOSECONDS_JAVA
+const MILLISECONDS_JAVA = 1000 * MICROSECONDS_JAVA
+
+export { API_BASE_URL, MILLISECONDS_JAVA}
