@@ -2,6 +2,8 @@
   "name": "@GeraldRyan/root-config",
   "scripts": {
     "start": "webpack serve --port 9000 --env isLocal",
+    "start-all": "(npm run start) & (cd ng-beancoin-client && npm run start) & (cd react-beancoin-client && npm run start)",
+    "stop-all": "kill $(lsof -t -i:9000); kill $(lsof -t -i:8090); kill $(lsof -t -i:4200) ",
     "lint": "eslint src --ext js,ts,tsx",
     "test": "cross-env BABEL_ENV=test jest --passWithNoTests",
     "format": "prettier --write .",
