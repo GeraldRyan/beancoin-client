@@ -11,7 +11,6 @@ function Blockchain(){
         .then(json => setBlockchain(json))
     }, []);
 
-
     return (
         <div className="Blockchain">
             <h3>Blockchain</h3>
