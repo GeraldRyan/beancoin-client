@@ -2,6 +2,7 @@ import './index.css'
 import { useState, useEffect } from 'react';
 import { API_BASE_URL } from './config';
 import Blockchain from './components/Blockchain';
+import logo from './assets/logo.png'
 
 export default function Root(props) {
   console.log("PROPS", props)
@@ -26,6 +27,7 @@ export default function Root(props) {
         is mounted!!
         <div>Welcome To Beancoin!</div>
       </section>
+      <img src={logo} className="logo" alt="" />
       <div>Address: {address}</div>
       <div>Balance: {balance}</div>
       <Blockchain></Blockchain>
